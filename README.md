@@ -76,14 +76,14 @@ The application uses:
 
 Key files:
 
-`server/index.js`: Main server configuration and Socket.io setup
-`public/app.js`: Client-side Socket.io implementation
-`public/index.html`: Frontend interface
-`public/styles.css`: Application styling
+- `server/index.js`: Main server configuration and Socket.io setup
+- `public/app.js`: Client-side Socket.io implementation
+- `public/index.html`: Frontend interface
+- `public/styles.css`: Application styling
 
 ### Socket Events
 
-`connection`: New user connects
-`message`: Message broadcasting
-`activity`: User typing activity
-`disconnect`: User disconnection
+- `connection`: New user connects
+- `message`: Message broadcasting
+- `activity`: User typing activity
+- `disconnect`: User disconnection
