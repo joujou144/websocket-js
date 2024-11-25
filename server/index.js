@@ -1,17 +1,19 @@
 import express from "express";
 import { Server } from "socket.io";
-import path from "path";
+import path from "path"; // nodejs module
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const PORT = process.env.PORT || 3500;
+const PORT = process.env.PORT || 3500; // if the port not defined in env file, declare it as 3500
 
 const app = express();
 
+// name the folder for static assets as public
 app.use(express.static(path.join(__dirname, "public")));
 
+// to declare what port to listen to in case decide to change the port
 const expressServer = app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
@@ -21,7 +23,7 @@ const io = new Server(expressServer, {
     origin:
       process.env.NODE_ENV === "production"
         ? false
-        : ["http://localhost:5500", "http://127.0.0.1:5500"],
+        : ["http://localhost:5500", "http://127.0.0.1:5500"], // dont actually need to address this if decide to keep frontend separate
   },
 });
 
